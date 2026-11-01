@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>خطوتي — تطبيق العادات والتركيز | يشتغل بدون إنترنت</title>
+<meta name="description" content="خطوتي: تطبيق عربي لبناء العادات اليومية وتتبّع السلاسل، مع مؤقت تركيز بومودورو لكل مادة وودجت وتذكيرات.">
+<meta name="theme-color" content="#1B63F6">
+<meta property="og:type" content="website"><meta property="og:title" content="خطوتي — Khotwati">
+<meta property="og:description" content="ابنِ عاداتك بخطوات صغيرة وركّز في مذاكرتك — يشتغل أوفلاين.">
+<meta property="og:image" content="assets/img/og.png"><meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" sizes="48x48" href="assets/img/favicon-48.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="preload" href="assets/fonts/ibm-plex-sans-arabic-arabic-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/site.css">
+<script src="site.config.js"></script>
+<script type="module" src="assets/js/site.js"></script>
+</head>
+<body>
+<div id="splash" aria-hidden="true"><img src="assets/img/logo.png" alt=""><b data-i18n="splash"></b></div>
+<div id="progress"></div>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top"><img src="assets/img/favicon-512.png" alt="" width="36" height="36"><span data-i18n="splash"></span></a>
+    <nav class="links" id="links">
+      <a href="#features" data-i18n="nav_features"></a><a href="#screens" data-i18n="nav_screens"></a>
+      <a href="#download" data-i18n="nav_download"></a><a href="#pay" data-i18n="nav_pay"></a><a href="#faq" data-i18n="nav_faq"></a>
+    </nav>
+    <div class="nav-tools">
+      <button class="icon-btn" id="themeBtn" data-i18n-aria="theme"><i data-icon="sun" class="sun"></i><i data-icon="moon" class="moon"></i></button>
+      <button class="pill-btn" id="langBtn" data-i18n="lang_btn"></button>
+      <a class="btn btn-sm primary hide-sm" href="#pay" data-i18n="cta_how_pay"></a>
+      <button class="icon-btn only-sm" id="menuBtn" data-i18n-aria="menu"><i data-icon="menu"></i></button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="mesh"></div><div class="gridfx"></div>
+  <div class="wrap hero-grid">
+    <div class="hero-copy reveal">
+      <span class="chip"><i data-icon="sparkles"></i><span data-i18n="hero_badge"></span></span>
+      <img class="hero-logo" src="assets/img/logo.png" alt="خطوتي — Khotwati" width="150" height="128">
+      <h1 data-i18n-html="hero_h1"></h1>
+      <p class="lead" data-i18n="hero_p"></p>
+      <div class="cta-row">
+        <a class="btn primary lg shine" id="apkBtn" href="downloads/Khotwati-Streaks.apk" download><i data-icon="download"></i><span data-i18n="cta_apk"></span></a>
+        <a class="btn ghost lg" href="#pay"><i data-icon="key-round"></i><span data-i18n="cta_how_pay"></span></a>
+      </div>
+      <div class="stores">
+        <a class="store" id="storePlay" aria-disabled="true"><i data-icon="play"></i><span><small class="s-top" data-i18n="on_play"></small><b data-i18n="gplay"></b></span><em class="ribbon" data-i18n="soon"></em></a>
+        <a class="store" id="storeApple" aria-disabled="true"><i data-icon="apple"></i><span><small class="s-top" data-i18n="on_appstore"></small><b data-i18n="appstore"></b></span><em class="ribbon" data-i18n="soon"></em></a>
+      </div>
+      <p class="meta" id="heroMeta"></p>
+    </div>
+    <div class="hero-art reveal" id="heroArt">
+      <div class="glow"></div>
+      <div class="float-chip c1"><i data-icon="flame"></i><b>12</b></div>
+      <div class="float-chip c2"><i data-icon="timer"></i><b>25:00</b></div>
+      <div class="float-chip c3"><i data-icon="bell-ring"></i></div>
+      <div class="float-chip c4"><i data-icon="check-circle-2"></i></div>
+      <div class="phone tilt" id="heroPhone"><div class="notch"></div><img data-shot="home" alt="" width="300" height="649"><img data-shot="focus" alt=""><img data-shot="stats" alt=""><img data-shot="dark_home" alt=""></div>
+    </div>
+  </div>
+  <div class="wrap trust reveal">
+    <div><i data-icon="wifi-off"></i><span data-i18n="trust_offline"></span></div>
+    <div><i data-icon="shield-check"></i><span data-i18n="trust_private"></span></div>
+    <div><i data-icon="ban"></i><span data-i18n="trust_noads"></span></div>
+    <div><i data-icon="languages"></i><span data-i18n="trust_lang"></span></div>
+  </div>
+</section>
+
+<!-- ================= HOW IT WORKS ================= -->
+<section class="sec" id="how">
+  <div class="wrap">
+    <div class="sec-head reveal"><h2 data-i18n="how_h"></h2><p data-i18n="how_p"></p></div>
+    <ol class="timeline reveal">
+      <li><span class="ico"><i data-icon="download"></i></span><b class="n">1</b><h3 data-i18n="how1_t"></h3><p data-i18n="how1_p"></p></li>
+      <li><span class="ico"><i data-icon="wallet"></i></span><b class="n">2</b><h3 data-i18n="how2_t"></h3><p data-i18n="how2_p"></p></li>
+      <li><span class="ico"><i data-icon="key-round"></i></span><b class="n">3</b><h3 data-i18n="how3_t"></h3><p data-i18n="how3_p"></p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ================= FEATURES (bento) ================= -->
+<section class="sec alt" id="features">
+  <div class="wrap">
+    <div class="sec-head reveal"><h2 data-i18n="feat_h"></h2><p data-i18n="feat_p"></p></div>
+    <div class="bento">
+      <article class="card b-lg reveal"><span class="ico"><i data-icon="flame"></i></span><h3 data-i18n="f1_t"></h3><p data-i18n="f1_p"></p><div class="heat" id="heat" aria-hidden="true"></div></article>
+      <article class="card b-lg reveal"><span class="ico"><i data-icon="timer"></i></span><h3 data-i18n="f2_t"></h3><p data-i18n="f2_p"></p>
+        <div class="ringbox" aria-hidden="true"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="50" class="trk"/><circle cx="60" cy="60" r="50" class="arc"/></svg><b>25:00</b></div></article>
+      <article class="card reveal"><span class="ico"><i data-icon="calendar-clock"></i></span><h3 data-i18n="f3_t"></h3><p data-i18n="f3_p"></p></article>
+      <article class="card reveal"><span class="ico"><i data-icon="bell-ring"></i></span><h3 data-i18n="f4_t"></h3><p data-i18n="f4_p"></p></article>
+      <article class="card reveal"><span class="ico"><i data-icon="layout-grid"></i></span><h3 data-i18n="f5_t"></h3><p data-i18n="f5_p"></p></article>
+      <article class="card reveal"><span class="ico"><i data-icon="headphones"></i></span><h3 data-i18n="f6_t"></h3><p data-i18n="f6_p"></p></article>
+      <article class="card b-wide reveal"><span class="ico"><i data-icon="database"></i></span><h3 data-i18n="f7_t"></h3><p data-i18n="f7_p"></p></article>
+      <article class="card b-wide reveal"><span class="ico"><i data-icon="lock"></i></span><h3 data-i18n="f8_t"></h3><p data-i18n="f8_p"></p></article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= APP TOUR ================= -->
+<section class="sec" id="screens">
+  <div class="wrap">
+    <div class="sec-head reveal"><h2 data-i18n="screens_h"></h2><p data-i18n="screens_p"></p></div>
+    <div class="show reveal">
+      <div class="show-tabs" id="showTabs" role="tablist">
+        <button class="on" data-shot="home"><i data-icon="layout-grid"></i><span><b data-i18n="sc_home"></b><small data-i18n="sc_home_d"></small></span></button>
+        <button data-shot="habits"><i data-icon="flame"></i><span><b data-i18n="sc_habits"></b><small data-i18n="sc_habits_d"></small></span></button>
+        <button data-shot="focus"><i data-icon="timer"></i><span><b data-i18n="sc_focus"></b><small data-i18n="sc_focus_d"></small></span></button>
+        <button data-shot="stats"><i data-icon="chart-column"></i><span><b data-i18n="sc_stats"></b><small data-i18n="sc_stats_d"></small></span></button>
+        <button data-shot="dark_home"><i data-icon="moon"></i><span><b data-i18n="sc_dark"></b><small data-i18n="sc_dark_d"></small></span></button>
+        <button data-shot="activate"><i data-icon="key-round"></i><span><b data-i18n="sc_activate"></b><small data-i18n="sc_activate_d"></small></span></button>
+      </div>
+      <div class="show-phone"><div class="phone lg"><div class="notch"></div><img id="showImg" data-shot-fixed alt="" width="320" height="692"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= DOWNLOAD ================= -->
+<section class="sec alt" id="download">
+  <div class="wrap">
+    <div class="sec-head reveal"><h2 data-i18n="dl_h"></h2><p data-i18n="dl_p"></p></div>
+    <ol class="steps reveal">
+      <li><span class="num">1</span><span class="ico"><i data-icon="download"></i></span><h3 data-i18n="dl1_t"></h3><p data-i18n="dl1_p"></p></li>
+      <li><span class="num">2</span><span class="ico"><i data-icon="package-check"></i></span><h3 data-i18n="dl2_t"></h3><p data-i18n="dl2_p"></p></li>
+      <li><span class="num">3</span><span class="ico"><i data-icon="key-round"></i></span><h3 data-i18n="dl3_t"></h3><p data-i18n="dl3_p"></p></li>
+    </ol>
+    <div class="center reveal">
+      <a class="btn primary lg shine" id="apkBtn2" href="downloads/Khotwati-Streaks.apk" download><i data-icon="download"></i><span data-i18n="cta_apk"></span></a>
+      <p class="meta" data-i18n="dl_note"></p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SUBSCRIBE ================= -->
+<section class="sec" id="pay">
+  <div class="wrap">
+    <div class="sec-head reveal"><h2 data-i18n="pay_h"></h2><p data-i18n="pay_p"></p></div>
+    <div class="pay-layout">
+      <aside class="plan reveal">
+        <span class="plan-tag"><i data-icon="badge-check"></i><span data-i18n="plan_t"></span></span>
+        <div class="price"><b id="priceAmt"></b><span id="priceCur"></span></div>
+        <small data-i18n="plan_per"></small>
+        <ul>
+          <li><i data-icon="check"></i><span data-i18n="plan_1"></span></li><li><i data-icon="check"></i><span data-i18n="plan_2"></span></li>
+          <li><i data-icon="check"></i><span data-i18n="plan_3"></span></li><li><i data-icon="check"></i><span data-i18n="plan_4"></span></li>
+        </ul>
+      </aside>
+
+      <div class="wizard reveal" id="wizard">
+        <div class="wz-tabs" id="wzTabs" role="tablist">
+          <button class="on" data-type="new"><i data-icon="sparkles"></i><span data-i18n="wz_new"></span></button>
+          <button data-type="renew"><i data-icon="refresh-cw"></i><span data-i18n="wz_renew"></span></button>
+          <button data-type="transfer"><i data-icon="smartphone"></i><span data-i18n="wz_transfer"></span></button>
+        </div>
+        <div class="resume" id="resume" hidden><i data-icon="clock"></i><span data-i18n="tr_resume"></span><b id="resumeId"></b><button class="mini" id="resumeBtn" type="button" data-i18n="tr_resume_btn"></button></div>
+        <ol class="stepper" id="stepper">
+          <li class="on" data-s="1"><b>1</b><span data-i18n="wz_s1"></span></li><li data-s="2"><b>2</b><span data-i18n="wz_s2"></span></li><li data-s="3"><b>3</b><span data-i18n="wz_s3"></span></li>
+        </ol>
+
+        <!-- step 1 -->
+        <section class="pane on" data-pane="1">
+          <p class="hint" id="wzHint"></p>
+          <div class="grid2">
+            <label><span data-i18n="wz_name"></span><input id="oName" type="text" maxlength="40" autocomplete="name"></label>
+            <label><span data-i18n="wz_phone"></span><input id="oPhone" type="text" inputmode="tel" dir="ltr" maxlength="20" autocomplete="tel"></label>
+          </div>
+          <label id="rowLic" hidden><span data-i18n="wz_lic"></span><input id="oLic" type="text" dir="ltr" maxlength="20" autocapitalize="characters" spellcheck="false" data-i18n-ph="wz_lic_ph"><small id="licMsg" class="msg"></small></label>
+          <label id="rowCode"><span data-i18n="wz_code"></span>
+            <div class="with-btn"><input id="oCode" type="text" dir="ltr" maxlength="30" autocapitalize="characters" spellcheck="false" data-i18n-ph="wz_code_ph"><button type="button" class="mini" id="pasteBtn"><i data-icon="clipboard-paste"></i><span data-i18n="paste"></span></button></div>
+            <small id="codeMsg" class="msg"></small></label>
+          <button class="btn primary lg block" id="toStep2" type="button" disabled><span data-i18n="next"></span><i data-icon="arrow-left" class="flip"></i></button>
+        </section>
+
+        <!-- step 2 -->
+        <section class="pane" data-pane="2">
+          <div class="amount"><span data-i18n="wz_amount"></span><b id="amtView"></b></div>
+          <h4 data-i18n="wz_pick"></h4>
+          <div class="pm-grid" id="pmGrid" role="radiogroup"></div>
+          <div class="pm-detail" id="pmDetail"></div>
+          <label class="check"><input type="checkbox" id="paidChk"><span data-i18n="wz_chk"></span></label>
+          <p class="meta" data-i18n="wz_note"></p>
+          <div class="row"><button class="btn ghost" id="back1" type="button"><i data-icon="arrow-right" class="flip"></i><span data-i18n="back"></span></button>
+            <button class="btn primary lg" id="createBtn" type="button" disabled><i data-icon="send"></i><span id="createTxt" data-i18n="wz_create"></span></button></div>
+        </section>
+
+        <!-- step 3 -->
+        <section class="pane" data-pane="3" id="tracker" aria-live="polite"></section>
+
+        <div class="follow" id="follow"><span data-i18n="tr_follow"></span>
+          <div class="with-btn"><input id="fId" type="text" dir="ltr" maxlength="14" autocapitalize="characters" spellcheck="false" data-i18n-ph="tr_follow_ph"><button class="mini" id="fBtn" type="button" data-i18n="tr_follow_btn"></button></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="sec alt" id="faq">
+  <div class="wrap narrow">
+    <div class="sec-head reveal"><h2 data-i18n="faq_h"></h2></div>
+    <div class="faq reveal">
+      <details><summary data-i18n="q1"></summary><p data-i18n="a1"></p></details>
+      <details><summary data-i18n="q2"></summary><p data-i18n="a2"></p></details>
+      <details><summary data-i18n="q3"></summary><p data-i18n="a3"></p></details>
+      <details><summary data-i18n="q8"></summary><p data-i18n="a8"></p></details>
+      <details><summary data-i18n="q4"></summary><p data-i18n="a4"></p></details>
+      <details><summary data-i18n="q5"></summary><p data-i18n="a5"></p></details>
+      <details><summary data-i18n="q6"></summary><p data-i18n="a6"></p></details>
+      <details><summary data-i18n="q7"></summary><p data-i18n="a7"></p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="sec contact">
+  <div class="mesh dim"></div>
+  <div class="wrap center reveal" style="position:relative">
+    <span class="ico lg"><i data-icon="message-circle"></i></span>
+    <h2 data-i18n="contact_h"></h2><p class="lead" data-i18n="contact_p"></p>
+    <a class="btn wa lg" id="waBtn" href="#" target="_blank" rel="noopener"><i data-icon="message-circle"></i><span data-i18n="contact_wa"></span></a>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div class="brand"><img src="assets/img/favicon-512.png" alt="" width="32" height="32"><span data-i18n="splash"></span></div>
+    <small>© <span id="year"></span> · <span data-i18n="foot_rights"></span> · <span data-i18n="foot_made"></span> <i data-icon="heart"></i></small>
+    <a href="#top" class="icon-btn" data-i18n-aria="top"><i data-icon="arrow-left" style="transform:rotate(90deg)"></i></a>
+  </div>
+</footer>
+
+<a class="fab" id="fab" href="#" target="_blank" rel="noopener" data-i18n-aria="wa_fab"><i data-icon="message-circle"></i></a>
+<div class="mbar" id="mbar"><a class="btn primary" id="mbDl" href="downloads/Khotwati-Streaks.apk" download><i data-icon="download"></i><span data-i18n="cta_download"></span></a><a class="btn wa" id="mbWa" href="#" target="_blank" rel="noopener" data-i18n-aria="wa_fab"><i data-icon="message-circle"></i></a></div>
+<div id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

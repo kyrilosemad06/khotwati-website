@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<!-- This page may only talk to its own site (connect-src 'self'): the private key stays in this tab's memory and is never sent anywhere. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; form-action 'none'; base-uri 'none'; object-src 'none'">
+<link rel="icon" type="image/png" href="/assets/img/favicon-48.png">
+<title>خطوتي — كونسول المالك</title>
+<style>
+  :root{--bg:#F4F8FF;--card:#fff;--ink:#1A233A;--mut:#6C7A9C;--line:#E3EBFA;--blue:#1B63F6;--cyan:#00D2FF;--ok:#10B981;--warn:#F59E0B;--bad:#F43F5E;--soft:#EBF2FE;}
+  @media (prefers-color-scheme:dark){:root{--bg:#0B1120;--card:#111C38;--ink:#E8EEFF;--mut:#8FA0C8;--line:#22325c;--soft:#16264d;}}
+  *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 "Segoe UI",Tahoma,Arial,sans-serif}
+  header{position:sticky;top:0;z-index:5;background:var(--card);border-bottom:1px solid var(--line);padding:12px 20px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+  h1{font-size:18px;margin:0;font-weight:800} .grow{flex:1}
+  .badge{font-size:12px;font-weight:700;padding:4px 10px;border-radius:999px;border:1px solid transparent}
+  .b-test{background:#FEF3C7;color:#92400E;border-color:#FCD34D} .b-prod{background:#D1FAE5;color:#065F46;border-color:#6EE7B7}
+  button{font:inherit;cursor:pointer;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--ink);padding:8px 14px;font-weight:600}
+  button:hover{border-color:var(--blue)} button.primary{background:linear-gradient(135deg,var(--cyan),var(--blue));color:#fff;border:0;box-shadow:0 6px 16px rgba(27,99,246,.3)}
+  button.danger{color:var(--bad);border-color:rgba(244,63,94,.4)} button.sm{padding:5px 10px;font-size:13px;border-radius:10px} button:disabled{opacity:.5;cursor:default}
+  main{max-width:1180px;margin:0 auto;padding:18px 20px 60px}
+  .bar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:14px}
+  input,textarea,select{font:inherit;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:12px;padding:9px 12px;width:100%}
+  input:focus,textarea:focus{outline:2px solid rgba(27,99,246,.35);border-color:var(--blue)}
+  .search{max-width:320px} .chips{display:flex;gap:8px;flex-wrap:wrap}
+  .chip{padding:6px 12px;border-radius:999px;font-size:13px} .chip.on{background:var(--blue);color:#fff;border-color:var(--blue)}
+  table{width:100%;border-collapse:separate;border-spacing:0;background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+  th{font-size:12px;color:var(--mut);text-align:start;padding:10px 12px;background:var(--soft);font-weight:700;white-space:nowrap}
+  td{padding:11px 12px;border-top:1px solid var(--line);vertical-align:middle}
+  .mono{font-family:Consolas,"Courier New",monospace;letter-spacing:.04em;direction:ltr;unicode-bidi:embed;display:inline-block}
+  .st{font-size:12px;font-weight:700;padding:3px 10px;border-radius:999px;white-space:nowrap}
+  .s-active{background:#D1FAE5;color:#065F46} .s-expiring{background:#FEF3C7;color:#92400E} .s-expired{background:#FFE4E6;color:#9F1239} .s-revoked{background:#E2E8F0;color:#334155}
+  .sub{color:var(--mut);font-size:12px} .acts{display:flex;gap:6px;flex-wrap:wrap}
+  .empty{padding:40px;text-align:center;color:var(--mut)}
+  .overlay{position:fixed;inset:0;background:rgba(10,20,50,.5);display:flex;align-items:center;justify-content:center;padding:16px;z-index:20}
+  .modal{background:var(--card);border-radius:22px;max-width:560px;width:100%;max-height:92vh;overflow:auto;padding:22px;box-shadow:0 24px 60px rgba(0,0,0,.35)}
+  .modal h2{margin:0 0 14px;font-size:18px} label{display:block;font-size:13px;font-weight:700;margin:12px 0 5px;color:var(--mut)}
+  .row{display:flex;gap:10px} .row>*{flex:1} .foot{display:flex;gap:10px;margin-top:18px;justify-content:flex-start}
+  .note{font-size:13px;border-radius:12px;padding:9px 12px;margin-top:8px} .n-ok{background:#D1FAE5;color:#065F46} .n-bad{background:#FFE4E6;color:#9F1239} .n-info{background:var(--soft);color:var(--ink)}
+  .code{direction:ltr;text-align:left;font-family:Consolas,monospace;font-size:12.5px;line-height:1.6;word-break:break-all;background:var(--soft);border-radius:14px;padding:12px;user-select:all}
+  .toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);background:#0A1B4A;color:#fff;padding:10px 18px;border-radius:14px;z-index:40;font-weight:600;max-width:90vw}
+  .toast.err{background:#9F1239} details{margin-top:12px} summary{cursor:pointer;color:var(--blue);font-weight:700}
+  .hist{font-size:13px;margin:0;padding:0;list-style:none} .hist li{padding:6px 0;border-top:1px solid var(--line)}
+  .kv{display:grid;grid-template-columns:130px 1fr;gap:6px 12px;font-size:14px} .kv dt{color:var(--mut)} .kv dd{margin:0}
+
+  .unlock .modal{max-width:520px}.unlock input[type=file]{padding:8px}.unlock .row2{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+  .secure{background:var(--soft);border-radius:14px;padding:10px 14px;font-size:13px;margin:0 0 6px;color:var(--ink)}
+  .dirty{color:#B45309;font-weight:700}.saved{color:#047857;font-weight:700}
+  .orders{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:16px;margin-bottom:18px}
+  .orders-h{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}.orders-h h2{font-size:17px;margin:0}
+  .ord{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;border:1px solid var(--line);border-radius:16px;padding:12px 14px;margin-top:10px;background:var(--bg)}
+  .ord .meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:13px;color:var(--mut);margin-top:4px}.ord .tag{background:var(--soft);padding:2px 10px;border-radius:999px;font-weight:700;color:var(--ink)}
+  .ord .dev{direction:ltr;font-family:Consolas,monospace;font-weight:700;color:var(--ink)}.ord .acts{display:flex;gap:8px;flex-wrap:wrap}
+  @media(max-width:700px){.ord{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div id="unlock" class="overlay unlock" style="background:var(--bg)"><div class="modal">
+  <h2>🔐 كونسول المالك — خطوتي</h2>
+  <p class="secure">🛡 الصفحة دي بتشتغل جوه متصفحك بس. المفتاح الخاص بيتقرأ هنا وما بيتبعتش لأي سيرفر — الصفحة ممنوعة تتصل بالإنترنت أصلاً. اقفل التبويب وكل حاجة بتتمسح من الذاكرة.</p>
+  <label>ملف المفتاح الخاص (owner_private_key.pem)</label><input type="file" id="keyFile" accept=".pem,.key,.txt">
+  <label>باسوورد المفتاح</label><input type="password" id="pass" autocomplete="off">
+  <label>قاعدة العملاء (licenses.json)</label>
+  <div class="row2"><button id="openDb" type="button">📂 فتح الملف</button><button id="newDb" type="button">＋ قاعدة جديدة</button><span class="sub" id="dbStatus"></span></div>
+  <input type="file" id="dbFile" accept=".json,application/json" hidden>
+  <label>كلمة سر الطلبات (OWNER_TOKEN من إعدادات فيرسيل — اختياري، عشان تظهر طلبات الموقع)</label><input type="password" id="ownerTok" autocomplete="off">
+  <div class="foot"><button class="primary" id="unlockBtn" type="button">فتح الكونسول</button></div>
+  <div id="unlockMsg"></div>
+</div></div>
+
+<header id="hdr" hidden>
+  <h1>🔑 خطوتي — كونسول المالك</h1>
+  <span id="mode" class="badge"></span>
+  <span class="sub" id="count"></span>
+  <span class="grow"></span>
+  <button id="bInspect" type="button">🔍 فحص كود</button>
+  <button id="bKey" type="button">🗝 المفتاح العام</button>
+  <button id="bBackup" type="button">💾 نسخة احتياطية</button>
+  <button id="bSave" type="button">💾 حفظ القاعدة</button>
+  <button class="primary" id="bNew" type="button">＋ عميل جديد</button>
+</header>
+<main id="app" hidden>
+  <section id="ordersPanel" class="orders" hidden>
+    <div class="orders-h"><h2>📥 طلبات الموقع <span id="ordersCount" class="badge b-prod">0</span></h2><button id="ordersRefresh" type="button" class="sm">↻ تحديث</button></div>
+    <div id="orders"></div>
+  </section>
+  <div class="bar">
+    <input class="search" id="q" placeholder="ابحث بالاسم أو الرقم أو التليفون…">
+    <div class="chips" id="chips"></div>
+  </div>
+  <div id="tableWrap"></div>
+  <p class="sub" id="foot" style="margin-top:14px"></p>
+</main>
+<div id="layer"></div>
+<script type="module" src="/owner/owner.js"></script>
+</body>
+</html>
