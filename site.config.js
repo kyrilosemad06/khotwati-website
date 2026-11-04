@@ -12,9 +12,9 @@ window.SITE = {
 
   // Where customers send the MONEY.
   payments: [
-    { id: 'instapay', name: { ar: 'إنستا باي', en: 'InstaPay' },        value: 'kyrilos06@instapay', link: 'https://ipn.eg/S/kyrilos06/instapay/3QEIdh', color: '#6D28D9' },
-    { id: 'vodafone', name: { ar: 'فودافون كاش', en: 'Vodafone Cash' }, value: '01225986832', color: '#E60000' },
-    { id: 'orange',   name: { ar: 'أورنج كاش', en: 'Orange Cash' },     value: '01225986832', color: '#FF7900' },
+    { id: 'instapay', name: { ar: 'إنستا باي', en: 'InstaPay' },        value: 'kyrilos06@instapay', link: 'https://ipn.eg/S/kyrilos06/instapay/3QEIdh', color: '#6D28D9', logo: 'assets/img/payments/instapay.png', badge: { ar: 'الأسرع في التحويل', en: 'Fastest transfer' } },
+    { id: 'vodafone', name: { ar: 'فودافون كاش', en: 'Vodafone Cash' }, value: '01225986832', color: '#E60000', logo: 'assets/img/payments/vodafone-cash.webp' },
+    { id: 'orange',   name: { ar: 'أورنج كاش', en: 'Orange Cash' },     value: '01225986832', color: '#FF7900', logo: 'assets/img/payments/orange-cash.png' },
   ],
 
   // The APK customers download (file lives in /downloads/)
@@ -23,5 +23,10 @@ window.SITE = {
   // When the app is published put the store links here: the "coming soon" badges become real buttons.
   stores: { play: '', appstore: '' },
 
-  email: '',
+  email: 'khotwatiapplication@gmail.com',
+  social: {
+    facebook: 'https://www.facebook.com/share/198TuVXnxE/',
+    instagram: 'https://www.instagram.com/khotwati.app?mdxt=MWdlMW5reWY5NXNnZA==',
+    tiktok: 'https://www.tiktok.com/@khotwati.app?_r=1&_t=ZS-9B7V9f3Uf2L',
+  },
 };

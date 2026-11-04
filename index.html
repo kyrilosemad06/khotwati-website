@@ -51,8 +51,8 @@
         <a class="btn ghost lg" href="#pay"><i data-icon="key-round"></i><span data-i18n="cta_how_pay"></span></a>
       </div>
       <div class="stores">
-        <a class="store" id="storePlay" aria-disabled="true"><i data-icon="play"></i><span><small class="s-top" data-i18n="on_play"></small><b data-i18n="gplay"></b></span><em class="ribbon" data-i18n="soon"></em></a>
-        <a class="store" id="storeApple" aria-disabled="true"><i data-icon="apple"></i><span><small class="s-top" data-i18n="on_appstore"></small><b data-i18n="appstore"></b></span><em class="ribbon" data-i18n="soon"></em></a>
+        <a class="store" id="storePlay" aria-disabled="true"><img class="store-logo" src="assets/img/payments/google-play.webp" alt=""><span><small class="s-top" data-i18n="on_play"></small><b data-i18n="gplay"></b></span><em class="ribbon" data-i18n="soon"></em></a>
+        <a class="store" id="storeApple" aria-disabled="true"><img class="store-logo" src="assets/img/payments/app-store.webp" alt=""><span><small class="s-top" data-i18n="on_appstore"></small><b data-i18n="appstore"></b></span><em class="ribbon" data-i18n="soon"></em></a>
       </div>
       <p class="meta" id="heroMeta"></p>
     </div>
@@ -204,6 +204,14 @@
   <div class="wrap narrow">
     <div class="sec-head reveal"><h2 data-i18n="faq_h"></h2></div>
     <div class="faq reveal">
+      <details class="faq-featured" open>
+        <summary><span data-i18n="q_install"></span><em data-i18n="faq_featured"></em></summary>
+        <p data-i18n-html="a_install_html"></p>
+      </details>
+      <details>
+        <summary data-i18n="q_why"></summary>
+        <p data-i18n-html="a_why_html"></p>
+      </details>
       <details><summary data-i18n="q1"></summary><p data-i18n="a1"></p></details>
       <details><summary data-i18n="q2"></summary><p data-i18n="a2"></p></details>
       <details><summary data-i18n="q3"></summary><p data-i18n="a3"></p></details>
@@ -212,6 +220,19 @@
       <details><summary data-i18n="q5"></summary><p data-i18n="a5"></p></details>
       <details><summary data-i18n="q6"></summary><p data-i18n="a6"></p></details>
       <details><summary data-i18n="q7"></summary><p data-i18n="a7"></p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SOCIAL ================= -->
+<section class="sec social-sec" id="social">
+  <div class="wrap narrow">
+    <div class="sec-head center reveal"><h2 data-i18n="social_h"></h2><p data-i18n="social_p"></p></div>
+    <div class="social-links reveal">
+      <a class="social-link facebook" id="socialFacebook" href="#" target="_blank" rel="noopener"><span class="social-mark">f</span><span data-i18n="social_facebook"></span></a>
+      <a class="social-link instagram" id="socialInstagram" href="#" target="_blank" rel="noopener"><span class="social-mark">◎</span><span data-i18n="social_instagram"></span></a>
+      <a class="social-link tiktok" id="socialTiktok" href="#" target="_blank" rel="noopener"><span class="social-mark">♪</span><span data-i18n="social_tiktok"></span></a>
+      <a class="social-link email" id="socialEmail" href="#"><span class="social-mark"><i data-icon="mail"></i></span><span data-i18n="social_email"></span></a>
     </div>
   </div>
 </section>

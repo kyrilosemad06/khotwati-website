@@ -51,7 +51,11 @@ export function initWizard(ctx) {
   // ------------------------------------------------------------------ payment methods
   function renderPm() {
     $('#amtView').textContent = money();
-    $('#pmGrid').innerHTML = (S.payments || []).map((p) => `<button type="button" class="pm ${p.id === st.method ? 'on' : ''}" role="radio" aria-checked="${p.id === st.method}" data-id="${esc(p.id)}" style="--mc:${esc(p.color || '#1B63F6')}"><span class="ico">${svg(p.id === 'instapay' ? 'send' : 'smartphone')}</span>${esc(p.name[lang()])}</button>`).join('');
+    $('#pmGrid').innerHTML = (S.payments || []).map((p) => {
+      const logo = p.logo ? `<img class="pm-logo" src="${esc(p.logo)}" alt="">` : `<span class="ico">${svg(p.id === 'instapay' ? 'send' : 'smartphone')}</span>`;
+      const badge = p.badge?.[lang()] ? `<span class="pm-badge">${esc(p.badge[lang()])}</span>` : '';
+      return `<button type="button" class="pm ${p.id === st.method ? 'on' : ''}" role="radio" aria-checked="${p.id === st.method}" data-id="${esc(p.id)}" style="--mc:${esc(p.color || '#1B63F6')}">${logo}<span class="pm-name">${esc(p.name[lang()])}</span>${badge}</button>`;
+    }).join('');
     $$('#pmGrid .pm').forEach((b) => b.addEventListener('click', () => { st.method = b.dataset.id; renderPm(); }));
     const m = method(); if (!m) return;
     const steps = (m.link ? t('pm_insta') : t('pm_wallet')).map((x) => `<li>${esc(x)}</li>`).join('');
