@@ -7,16 +7,14 @@
 <!-- This page may only talk to its own site (connect-src 'self'): the private key stays in this tab's memory and is never sent anywhere. -->
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; form-action 'none'; base-uri 'none'; object-src 'none'">
 <link rel="icon" type="image/png" href="/assets/img/favicon-48.png">
-<link rel="preload" href="/assets/fonts/google-sans-flex-400.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="/assets/fonts/google-sans-variable.ttf" as="font" type="font/ttf" crossorigin>
 <title>خطوتي — كونسول المالك</title>
 <style>
-  @font-face{font-family:"Google Sans Flex";font-weight:400;font-style:normal;font-display:swap;src:url("/assets/fonts/google-sans-flex-400.ttf") format("truetype")}
-  @font-face{font-family:"Google Sans Flex";font-weight:500;font-style:normal;font-display:swap;src:url("/assets/fonts/google-sans-flex-500.ttf") format("truetype")}
-  @font-face{font-family:"Google Sans Flex";font-weight:600;font-style:normal;font-display:swap;src:url("/assets/fonts/google-sans-flex-600.ttf") format("truetype")}
-  @font-face{font-family:"Google Sans Flex";font-weight:700 900;font-style:normal;font-display:swap;src:url("/assets/fonts/google-sans-flex-700.ttf") format("truetype")}
+  @font-face{font-family:"Google Sans";font-weight:400 700;font-style:normal;font-display:swap;src:url("/assets/fonts/google-sans-variable.ttf") format("truetype")}
+  @font-face{font-family:"Google Sans";font-weight:400 700;font-style:italic;font-display:swap;src:url("/assets/fonts/google-sans-italic-variable.ttf") format("truetype")}
   :root{--bg:#F4F8FF;--card:#fff;--ink:#1A233A;--mut:#6C7A9C;--line:#E3EBFA;--blue:#1B63F6;--cyan:#00D2FF;--ok:#10B981;--warn:#F59E0B;--bad:#F43F5E;--soft:#EBF2FE;}
   @media (prefers-color-scheme:dark){:root{--bg:#0B1120;--card:#111C38;--ink:#E8EEFF;--mut:#8FA0C8;--line:#22325c;--soft:#16264d;}}
-  *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 "Google Sans Flex","Google Sans","Google Sans Text","Product Sans","Plex","Segoe UI",Tahoma,Arial,sans-serif}
+  *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 "Google Sans","Google Sans Text","Product Sans","Plex","Segoe UI",Tahoma,Arial,sans-serif}
   header{position:sticky;top:0;z-index:5;background:var(--card);border-bottom:1px solid var(--line);padding:12px 20px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
   h1{font-size:18px;margin:0;font-weight:800} .grow{flex:1}
   .badge{font-size:12px;font-weight:700;padding:4px 10px;border-radius:999px;border:1px solid transparent}
