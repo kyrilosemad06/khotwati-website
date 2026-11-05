@@ -1,6 +1,6 @@
-import { DICT } from './i18n.js';
-import { hydrateIcons, svg } from './icons.js';
-import { initWizard } from './wizard.js';
+import { DICT } from './i18n.js?v=20261105-2';
+import { hydrateIcons, svg } from './icons.js?v=20261105-2';
+import { initWizard } from './wizard.js?v=20261105-2';
 
 const S = window.SITE || {};
 const $ = (s, r = document) => r.querySelector(s);
