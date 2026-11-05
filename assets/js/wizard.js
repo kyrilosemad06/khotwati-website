@@ -54,7 +54,7 @@ export function initWizard(ctx) {
     $('#pmGrid').innerHTML = (S.payments || []).map((p) => {
       const logo = p.logo ? `<img class="pm-logo pm-logo-${esc(p.id)}" src="${esc(p.logo)}" alt="">` : `<span class="ico">${svg(p.id === 'instapay' ? 'send' : 'smartphone')}</span>`;
       const badge = p.badge?.[lang()] ? `<span class="pm-badge">${esc(p.badge[lang()])}</span>` : '';
-      return `<button type="button" class="pm ${p.id === st.method ? 'on' : ''}" role="radio" aria-checked="${p.id === st.method}" data-id="${esc(p.id)}" style="--mc:${esc(p.color || '#1B63F6')}">${logo}<span class="pm-name">${esc(p.name[lang()])}</span>${badge}</button>`;
+      return `<button type="button" class="pm ${p.id === st.method ? 'on' : ''}" role="radio" aria-checked="${p.id === st.method}" data-id="${esc(p.id)}" style="--mc:${esc(p.color || '#1B63F6')}"><span class="pm-brand"><span class="pm-logo-wrap">${logo}</span><span class="pm-copy"><span class="pm-name">${esc(p.name[lang()])}</span>${badge}</span></span></button>`;
     }).join('');
     $$('#pmGrid .pm').forEach((b) => b.addEventListener('click', () => { st.method = b.dataset.id; renderPm(); }));
     const m = method(); if (!m) return;
