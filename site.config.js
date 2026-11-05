@@ -8,7 +8,7 @@ window.SITE = {
   whatsapp: '201508775843',
 
   // Yearly price shown on the site (change when you decide the final price)
-  price: { amount: 99, currency: { ar: 'جنيه', en: 'EGP' } },
+  price: { amount: 99, currency: { ar: 'جنيـه مصري', en: 'EGP' } },
 
   // Where customers send the MONEY.
   payments: [
