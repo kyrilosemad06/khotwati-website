@@ -12,9 +12,9 @@
 <link rel="icon" type="image/png" sizes="48x48" href="assets/img/favicon-48.png">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <link rel="preload" href="assets/fonts/google-sans-variable.ttf" as="font" type="font/ttf" crossorigin>
-<link rel="stylesheet" href="assets/css/site.css?v=20261105-2">
+<link rel="stylesheet" href="assets/css/site.css?v=20261105-3">
 <script src="site.config.js"></script>
-<script type="module" src="assets/js/site.js?v=20261105-2"></script>
+<script type="module" src="assets/js/site.js?v=20261105-3"></script>
 </head>
 <body>
 <div id="splash" aria-hidden="true"><img src="assets/img/logo.png" alt=""><b data-i18n="splash"></b></div>
@@ -51,8 +51,8 @@
         <a class="btn ghost lg" href="#pay"><i data-icon="key-round"></i><span data-i18n="cta_how_pay"></span></a>
       </div>
       <div class="stores">
-        <a class="store" id="storePlay" aria-disabled="true"><img class="store-logo" src="assets/img/payments/google-play.webp" alt=""><span><small class="s-top" data-i18n="on_play"></small><b data-i18n="gplay"></b></span><em class="ribbon" data-i18n="soon"></em></a>
-        <a class="store" id="storeApple" aria-disabled="true"><img class="store-logo" src="assets/img/payments/app-store.webp" alt=""><span><small class="s-top" data-i18n="on_appstore"></small><b data-i18n="appstore"></b></span><em class="ribbon" data-i18n="soon"></em></a>
+        <a class="store" id="storePlay" aria-disabled="true"><img class="store-logo" src="assets/img/payments/google-play.webp" alt=""><span class="store-copy"><small class="s-top" data-i18n="on_play"></small><b data-i18n="gplay"></b></span><em class="ribbon" data-i18n="soon"></em></a>
+        <a class="store" id="storeApple" aria-disabled="true"><img class="store-logo apple-store" src="assets/img/payments/app-store.webp" alt=""><span class="store-copy"><small class="s-top" data-i18n="on_appstore"></small><b data-i18n="appstore"></b></span><em class="ribbon" data-i18n="soon"></em></a>
       </div>
       <p class="meta" id="heroMeta"></p>
     </div>
@@ -208,7 +208,7 @@
         <summary><span data-i18n="q_install"></span><em data-i18n="faq_featured"></em></summary>
         <p data-i18n-html="a_install_html"></p>
       </details>
-      <details>
+      <details class="faq-highlight">
         <summary data-i18n="q_why"></summary>
         <p data-i18n-html="a_why_html"></p>
       </details>
@@ -229,10 +229,10 @@
   <div class="wrap narrow">
     <div class="sec-head center reveal"><h2 data-i18n="social_h"></h2><p data-i18n="social_p"></p></div>
     <div class="social-links reveal">
-      <a class="social-link facebook" id="socialFacebook" href="#" target="_blank" rel="noopener"><span class="social-mark">f</span><span data-i18n="social_facebook"></span></a>
-      <a class="social-link instagram" id="socialInstagram" href="#" target="_blank" rel="noopener"><span class="social-mark">◎</span><span data-i18n="social_instagram"></span></a>
-      <a class="social-link tiktok" id="socialTiktok" href="#" target="_blank" rel="noopener"><span class="social-mark">♪</span><span data-i18n="social_tiktok"></span></a>
-      <a class="social-link email" id="socialEmail" href="#"><span class="social-mark"><i data-icon="mail"></i></span><span data-i18n="social_email"></span></a>
+      <a class="social-link facebook" id="socialFacebook" href="#" target="_blank" rel="noopener"><img class="social-logo" src="assets/img/social/facebook.webp" alt=""><span data-i18n="social_facebook"></span></a>
+      <a class="social-link instagram" id="socialInstagram" href="#" target="_blank" rel="noopener"><img class="social-logo" src="assets/img/social/instagram.webp" alt=""><span data-i18n="social_instagram"></span></a>
+      <a class="social-link tiktok" id="socialTiktok" href="#" target="_blank" rel="noopener"><img class="social-logo" src="assets/img/social/tiktok.webp" alt=""><span data-i18n="social_tiktok"></span></a>
+      <a class="social-link email" id="socialEmail" href="#"><img class="social-logo" src="assets/img/social/gmail.webp" alt=""><span data-i18n="social_email"></span></a>
     </div>
   </div>
 </section>

@@ -12,9 +12,9 @@ window.SITE = {
 
   // Where customers send the MONEY.
   payments: [
-    { id: 'instapay', name: { ar: 'إنستا باي', en: 'InstaPay' },        value: 'kyrilos06@instapay', link: 'https://ipn.eg/S/kyrilos06/instapay/3QEIdh', color: '#6D28D9', logo: 'assets/img/payments/instapay.png', badge: { ar: 'الأسرع في التحويل', en: 'Fastest transfer' } },
+    { id: 'instapay', name: { ar: 'إنستا باي', en: 'InstaPay' },        value: 'kyrilos06@instapay', link: 'https://ipn.eg/S/kyrilos06/instapay/3QEIdh', color: '#6D28D9', logo: 'assets/img/payments/instapay.webp', badge: { ar: 'الأسرع في التحويل', en: 'Fastest transfer' } },
     { id: 'vodafone', name: { ar: 'فودافون كاش', en: 'Vodafone Cash' }, value: '01225986832', color: '#E60000', logo: 'assets/img/payments/vodafone-cash.webp' },
-    { id: 'orange',   name: { ar: 'أورنج كاش', en: 'Orange Cash' },     value: '01225986832', color: '#FF7900', logo: 'assets/img/payments/orange-cash.png' },
+    { id: 'orange',   name: { ar: 'أورنج كاش', en: 'Orange Cash' },     value: '01225986832', color: '#FF7900', logo: 'assets/img/payments/orange-cash.webp' },
   ],
 
   // The APK customers download (file lives in /downloads/)
