@@ -100,7 +100,7 @@ function initConfig() {
   for (const [id, url] of [['storePlay', S.stores?.play], ['storeApple', S.stores?.appstore]]) {
     const a = $('#' + id); if (url) { a.href = url; a.target = '_blank'; a.rel = 'noopener'; a.removeAttribute('aria-disabled'); }
   }
-  for (const [id, url] of [['socialFacebook', S.social?.facebook], ['socialInstagram', S.social?.instagram], ['socialTiktok', S.social?.tiktok], ['socialEmail', S.email ? 'mailto:' + S.email : '']]) {
+  for (const [id, url] of [['socialFacebook', S.social?.facebook], ['socialInstagram', S.social?.instagram], ['socialTiktok', S.social?.tiktok], ['socialYoutube', S.social?.youtube], ['socialEmail', S.email ? 'mailto:' + S.email : '']]) {
     const a = $('#' + id); if (a && url) a.href = url;
   }
   const warn = (e) => { if (isPlaceholder(S.whatsapp)) { e.preventDefault(); toast('WhatsApp number is not set in site.config.js'); } };

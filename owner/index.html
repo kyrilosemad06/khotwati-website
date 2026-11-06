@@ -12,17 +12,17 @@
 <style>
   @font-face{font-family:"Google Sans";font-weight:400 700;font-style:normal;font-display:swap;src:url("/assets/fonts/google-sans-variable.ttf") format("truetype")}
   @font-face{font-family:"Google Sans";font-weight:400 700;font-style:italic;font-display:swap;src:url("/assets/fonts/google-sans-italic-variable.ttf") format("truetype")}
-  :root{--bg:#F4F8FF;--card:#fff;--ink:#1A233A;--mut:#6C7A9C;--line:#E3EBFA;--blue:#1B63F6;--cyan:#00D2FF;--ok:#10B981;--warn:#F59E0B;--bad:#F43F5E;--soft:#EBF2FE;}
-  @media (prefers-color-scheme:dark){:root{--bg:#0B1120;--card:#111C38;--ink:#E8EEFF;--mut:#8FA0C8;--line:#22325c;--soft:#16264d;}}
+  :root{--bg:#F4F8FF;--card:#fff;--ink:#1A233A;--mut:#6C7A9C;--line:#E3EBFA;--blue:#1B63F6;--cyan:#00D2FF;--ok:#10B981;--warn:#F59E0B;--bad:#F43F5E;--soft:#EBF2FE;--navy:#0A1B4A;}
+  @media (prefers-color-scheme:dark){:root{--bg:#0B1120;--card:#111C38;--ink:#E8EEFF;--mut:#AAB8DC;--line:#263962;--soft:#16264d;--navy:#09142E;}}
   *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 "Google Sans","Google Sans Text","Product Sans","Plex","Segoe UI",Tahoma,Arial,sans-serif}
-  header{position:sticky;top:0;z-index:5;background:var(--card);border-bottom:1px solid var(--line);padding:12px 20px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
-  h1{font-size:18px;margin:0;font-weight:800} .grow{flex:1}
+  header{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--card) 92%,transparent);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);padding:12px 20px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+  h1{font-size:18px;margin:0;font-weight:800;letter-spacing:-.02em} .grow{flex:1}
   .badge{font-size:12px;font-weight:700;padding:4px 10px;border-radius:999px;border:1px solid transparent}
   .b-test{background:#FEF3C7;color:#92400E;border-color:#FCD34D} .b-prod{background:#D1FAE5;color:#065F46;border-color:#6EE7B7}
   button{font:inherit;cursor:pointer;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--ink);padding:8px 14px;font-weight:600}
   button:hover{border-color:var(--blue)} button.primary{background:linear-gradient(135deg,var(--cyan),var(--blue));color:#fff;border:0;box-shadow:0 6px 16px rgba(27,99,246,.3)}
   button.danger{color:var(--bad);border-color:rgba(244,63,94,.4)} button.sm{padding:5px 10px;font-size:13px;border-radius:10px} button:disabled{opacity:.5;cursor:default}
-  main{max-width:1180px;margin:0 auto;padding:18px 20px 60px}
+  main{max-width:1180px;margin:0 auto;padding:24px 20px 60px}.owner-intro{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:space-between;gap:22px;padding:26px 28px;margin-bottom:16px;border-radius:24px;color:#fff;background:radial-gradient(circle at 10% 0%,rgba(0,210,255,.32),transparent 34%),linear-gradient(125deg,#09205A,#123C98 58%,#1B63F6);box-shadow:0 18px 38px rgba(10,27,74,.18)}.owner-intro::after{content:"";position:absolute;width:220px;height:220px;inset:auto -72px -125px auto;border:1px solid rgba(255,255,255,.16);border-radius:50%;box-shadow:0 0 0 32px rgba(255,255,255,.05),0 0 0 64px rgba(255,255,255,.04)}.owner-intro-copy,.key-health{position:relative;z-index:1}.eyebrow{display:block;color:#A9F2FF;font-size:12px;font-weight:800;letter-spacing:.04em;margin-bottom:4px}.owner-intro h2{font-size:24px;line-height:1.25;margin:0}.owner-intro p{max-width:620px;margin:8px 0 0;color:#DCE9FF;font-size:14px}.key-health{min-width:220px;padding:14px 16px;border-radius:16px;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(8px)}.key-health small{display:block;color:#DCE9FF;margin-bottom:4px}.key-health b{display:block;font-size:14px}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:0 0 18px}.metric{display:flex;align-items:center;gap:12px;padding:16px;border:1px solid var(--line);border-radius:18px;background:var(--card);box-shadow:0 8px 22px rgba(10,27,74,.045)}.metric .metric-icon{display:grid;place-items:center;width:38px;height:38px;border-radius:13px;background:var(--soft);font-size:19px}.metric small{display:block;color:var(--mut);font-size:12px}.metric strong{display:block;font-size:22px;line-height:1.1;margin-top:3px}.metric.active .metric-icon{background:#D1FAE5}.metric.expiring .metric-icon{background:#FEF3C7}.metric.expired .metric-icon{background:#FFE4E6}
   .bar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:14px}
   input,textarea,select{font:inherit;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:12px;padding:9px 12px;width:100%}
   input:focus,textarea:focus{outline:2px solid rgba(27,99,246,.35);border-color:var(--blue)}
@@ -50,12 +50,12 @@
   .unlock .modal{max-width:520px}.unlock input[type=file]{padding:8px}.unlock .row2{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
   .secure{background:var(--soft);border-radius:14px;padding:10px 14px;font-size:13px;margin:0 0 6px;color:var(--ink)}
   .dirty{color:#B45309;font-weight:700}.saved{color:#047857;font-weight:700}
-  .orders{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:16px;margin-bottom:18px}
+  .orders{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:16px;margin-bottom:18px;box-shadow:0 8px 22px rgba(10,27,74,.04)}
   .orders-h{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}.orders-h h2{font-size:17px;margin:0}
   .ord{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;border:1px solid var(--line);border-radius:16px;padding:12px 14px;margin-top:10px;background:var(--bg)}
   .ord .meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:13px;color:var(--mut);margin-top:4px}.ord .tag{background:var(--soft);padding:2px 10px;border-radius:999px;font-weight:700;color:var(--ink)}
   .ord .dev{direction:ltr;font-family:Consolas,monospace;font-weight:700;color:var(--ink)}.ord .acts{display:flex;gap:8px;flex-wrap:wrap}
-  @media(max-width:700px){.ord{grid-template-columns:1fr}}
+  @media(max-width:850px){.metrics{grid-template-columns:repeat(2,1fr)}.owner-intro{align-items:flex-start;flex-direction:column}.key-health{width:100%;min-width:0}}@media(max-width:700px){header{padding:10px 14px;gap:8px}header h1{width:100%;font-size:16px}.grow{display:none}header button{padding:7px 9px;font-size:12px}main{padding:16px 14px 48px}.owner-intro{padding:22px 20px;border-radius:20px}.owner-intro h2{font-size:21px}.owner-intro p{font-size:13px}.metrics{gap:9px}.metric{padding:12px;gap:9px;border-radius:15px}.metric .metric-icon{width:34px;height:34px;font-size:16px}.metric strong{font-size:20px}.ord{grid-template-columns:1fr}.search{max-width:none}.bar{align-items:stretch}.bar .search{flex-basis:100%}}
 </style>
 </head>
 <body>
@@ -84,6 +84,16 @@
   <button class="primary" id="bNew" type="button">＋ عميل جديد</button>
 </header>
 <main id="app" hidden>
+  <section class="owner-intro" aria-label="ملخص كونسول المالك">
+    <div class="owner-intro-copy"><span class="eyebrow">إدارة التراخيص والطلبات</span><h2>كل ما تحتاجه لإدارة اشتراكات خطوتي.</h2><p>أصدر الأكواد، تابع حالة العملاء، واحفظ قاعدة البيانات محليًا من مكان واحد.</p></div>
+    <div class="key-health"><small>حالة مفتاح الإصدار</small><b id="keySummary">يتم التحقق…</b><small id="saveSummary" style="margin-top:8px"></small></div>
+  </section>
+  <section class="metrics" aria-label="إحصاءات التراخيص">
+    <article class="metric"><span class="metric-icon">👥</span><div><small>إجمالي العملاء</small><strong id="statTotal">0</strong></div></article>
+    <article class="metric active"><span class="metric-icon">✓</span><div><small>اشتراكات نشطة</small><strong id="statActive">0</strong></div></article>
+    <article class="metric expiring"><span class="metric-icon">⏳</span><div><small>تنتهي قريبًا</small><strong id="statExpiring">0</strong></div></article>
+    <article class="metric expired"><span class="metric-icon">⌁</span><div><small>منتهية أو ملغية</small><strong id="statClosed">0</strong></div></article>
+  </section>
   <section id="ordersPanel" class="orders" hidden>
     <div class="orders-h"><h2>📥 طلبات الموقع <span id="ordersCount" class="badge b-prod">0</span></h2><button id="ordersRefresh" type="button" class="sm">↻ تحديث</button></div>
     <div id="orders"></div>
@@ -96,6 +106,6 @@
   <p class="sub" id="foot" style="margin-top:14px"></p>
 </main>
 <div id="layer"></div>
-<script type="module" src="/owner/owner.js"></script>
+<script type="module" src="/owner/owner.js?v=20261106-2"></script>
 </body>
 </html>

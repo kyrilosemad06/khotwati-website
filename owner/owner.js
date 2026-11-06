@@ -68,9 +68,19 @@ const ARDATE=d=>new Date(d+"T12:00:00").toLocaleDateString("ar-EG",{day:"numeric
 const STATE={active:["نشط","s-active"],expiring:["ينتهي قريباً","s-expiring"],expired:["منتهي","s-expired"],revoked:["ملغي","s-revoked"]};
 const find=id=>S.licenses.find(l=>l.id===id);
 
+function updateDashboard(){
+  const count=(state)=>S.licenses.filter(l=>l.state===state).length;
+  $('#statTotal').textContent=S.licenses.length;
+  $('#statActive').textContent=count('active');
+  $('#statExpiring').textContent=count('expiring');
+  $('#statClosed').textContent=count('expired')+count('revoked');
+  const isTest=S.mode==='test';
+  $('#keySummary').textContent=isTest?'تجريبي — استخدمه للاختبار فقط':'مفتاح إنتاجي — جاهز لإصدار أكواد العملاء';
+  $('#saveSummary').textContent='قاعدة البيانات: '+core.name;
+}
 async function load(){S=await api("/api/state");
   const m=$("#mode");m.textContent=S.mode==="test"?"⚠ مفتاح تجريبي — لا تبِع به لعملاء حقيقيين":"✓ مفتاح حقيقي";m.className="badge "+(S.mode==="test"?"b-test":"b-prod");
-  $("#count").textContent=S.licenses.length+" عميل"; render()}
+  $("#count").textContent=S.licenses.length+" عميل"; updateDashboard(); render()}
 
 // ---------- list
 function render(){

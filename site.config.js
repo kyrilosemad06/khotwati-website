@@ -28,5 +28,6 @@ window.SITE = {
     facebook: 'https://www.facebook.com/share/198TuVXnxE/',
     instagram: 'https://www.instagram.com/khotwati.app?mdxt=MWdlMW5reWY5NXNnZA==',
     tiktok: 'https://www.tiktok.com/@khotwati.app?_r=1&_t=ZS-9B7V9f3Uf2L',
+    youtube: 'https://youtube.com/@khotwatiapp?si=BwsVuwyAMrysaH4A',
   },
 };
