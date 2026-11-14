@@ -1,3 +1,32 @@
+@font-face {
+    font-family: 'Thmanyah';
+    src: url('../fonts/thmanyahsans-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Thmanyah';
+    src: url('../fonts/thmanyahsans-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Thmanyah';
+    src: url('../fonts/thmanyahsans-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Thmanyah';
+    src: url('../fonts/thmanyahsans-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
 @font-face{font-family:"Google Sans";font-weight:400 700;font-style:normal;font-display:swap;src:url(../fonts/google-sans-variable.ttf) format("truetype")}
 @font-face{font-family:"Google Sans";font-weight:400 700;font-style:italic;font-display:swap;src:url(../fonts/google-sans-italic-variable.ttf) format("truetype")}
 @font-face{font-family:"Plex";font-weight:400;font-display:swap;src:url(../fonts/ibm-plex-sans-arabic-arabic-400-normal.woff2) format("woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
